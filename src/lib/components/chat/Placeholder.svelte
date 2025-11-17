@@ -111,7 +111,7 @@
 										.join(', ')}
 									placement="top"
 								>
-									<button
+									<!-- <button
 										aria-hidden={models.length <= 1}
 										aria-label={$i18n.t('Get information on {{name}} in the UI', {
 											name: models[modelIdx]?.name
@@ -130,7 +130,7 @@
 											aria-hidden="true"
 											draggable="false"
 										/>
-									</button>
+									</button> -->
 								</Tooltip>
 							{/each}
 						</div>

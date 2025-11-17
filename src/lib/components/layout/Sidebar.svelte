@@ -564,9 +564,16 @@
 							<img
 								crossorigin="anonymous"
 								src="{WEBUI_BASE_URL}/static/favicon.png"
-								class="sidebar-new-chat-icon size-6 rounded-full group-hover:hidden"
+								
 								alt=""
 							/>
+
+							<!-- <img
+								crossorigin="anonymous"
+								src="{WEBUI_BASE_URL}/static/favicon.png"
+								class="sidebar-new-chat-icon size-6 rounded-full group-hover:hidden"
+								alt=""
+							/> -->
 
 							<Sidebar className="size-5 hidden group-hover:flex" />
 						</div>
@@ -739,6 +746,11 @@
 					draggable="false"
 					on:click={newChatHandler}
 				>
+					<!-- <img
+						crossorigin="anonymous"
+						src="{WEBUI_BASE_URL}/static/govbr.png"
+						alt=""
+					/> -->
 					<img
 						crossorigin="anonymous"
 						src="{WEBUI_BASE_URL}/static/favicon.png"
