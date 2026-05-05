@@ -828,7 +828,7 @@
 								</div>
 								<div class=" self-center">{$i18n.t('Account')}</div>
 							</button>
-						{:else if tabId === 'about'}
+						<!-- {:else if tabId === 'about'}
 							<button
 								role="tab"
 								aria-controls="tab-about"
@@ -851,7 +851,7 @@
 									<InfoCircle strokeWidth="2" />
 								</div>
 								<div class=" self-center">{$i18n.t('About')}</div>
-							</button>
+							</button> -->
 						{/if}
 					{/each}
 				{:else}

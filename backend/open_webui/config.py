@@ -29,6 +29,7 @@ from open_webui.env import (
     REDIS_SENTINEL_HOSTS,
     REDIS_SENTINEL_PORT,
     FRONTEND_BUILD_DIR,
+    BASE_DIR,
     OFFLINE_MODE,
     OPEN_WEBUI_DIR,
     WEBUI_AUTH,
@@ -902,6 +903,7 @@ load_oauth_providers()
 # Static DIR
 ####################################
 
+
 STATIC_DIR = Path(os.getenv('STATIC_DIR', OPEN_WEBUI_DIR / 'static')).resolve()
 
 try:
@@ -924,21 +926,57 @@ for file_path in (FRONTEND_BUILD_DIR / 'static').glob('**/*'):
         except Exception as e:
             logging.error(f'An error occurred: {e}')
 
-frontend_favicon = FRONTEND_BUILD_DIR / 'static' / 'favicon.png'
+#STATIC_CUSTOM = Path(os.environ.get('STATIC_CUSTOM', '')).resolve()
 
+frontend_favicon = FRONTEND_BUILD_DIR / 'static' / 'favicon.png'
+# frontend_favicon = STATIC_CUSTOM / 'favicon.png'
 if frontend_favicon.exists():
     try:
         shutil.copyfile(frontend_favicon, STATIC_DIR / 'favicon.png')
     except Exception as e:
         logging.error(f'An error occurred: {e}')
 
-frontend_splash = FRONTEND_BUILD_DIR / 'static' / 'splash.png'
+frontend_favicon_dark = FRONTEND_BUILD_DIR / 'static' / 'favicon-dark.png'
+# frontend_favicon_dark = STATIC_CUSTOM / 'favicon-dark.png'
+if frontend_favicon_dark.exists():
+    try:
+        shutil.copyfile(frontend_favicon_dark, STATIC_DIR / 'favicon-dark.png')
+    except Exception as e:
+        logging.error(f'An error occurred: {e}')
 
+
+# frontend_favicon_svg = STATIC_CUSTOM / 'favicon.svg'
+frontend_favicon_svg = FRONTEND_BUILD_DIR / 'static' / 'favicon.svg'
+if frontend_favicon_svg.exists():
+    try:
+        shutil.copyfile(frontend_favicon_svg, STATIC_DIR / 'favicon.svg')
+    except Exception as e:
+        logging.error(f'An error occurred: {e}')
+
+# frontend_splash = STATIC_CUSTOM / 'splash.png'
+frontend_splash = FRONTEND_BUILD_DIR / 'static' / 'splash.png'
 if frontend_splash.exists():
     try:
         shutil.copyfile(frontend_splash, STATIC_DIR / 'splash.png')
     except Exception as e:
         logging.error(f'An error occurred: {e}')
+
+# frontend_splash_dark = STATIC_CUSTOM / 'splash-dark.png'
+frontend_splash_dark = FRONTEND_BUILD_DIR / 'static' / 'splash-dark.png'
+if frontend_splash_dark.exists():
+    try:
+        shutil.copyfile(frontend_splash_dark, STATIC_DIR / 'splash-dark.png')
+    except Exception as e:
+        logging.error(f'An error occurred: {e}')
+
+# frontend_logo = STATIC_CUSTOM / 'logo.png'
+frontend_logo = FRONTEND_BUILD_DIR / 'static' / 'logo.png'
+if frontend_logo.exists():
+    try:
+        shutil.copyfile(frontend_logo, STATIC_DIR / 'logo.png')
+    except Exception as e:
+        logging.error(f'An error occurred: {e}')
+
 
 frontend_loader = FRONTEND_BUILD_DIR / 'static' / 'loader.js'
 
